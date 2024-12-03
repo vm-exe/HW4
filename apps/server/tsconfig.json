@@ -1,0 +1,13 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "lib": ["ES2015"],
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "prismaClient": ["../../prisma/prismaClient.ts"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["src"]
+}
