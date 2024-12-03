@@ -7,13 +7,13 @@ test('search page displays products and handles search', async ({ page }) => {
   await expect(page).toHaveTitle(/Vite \+ React \+ TS/); 
 
  
-  const productCards = page.locator('.MuiCard-root'); // Selecciona los cards de productos (ajustar si el selector es diferente)
+  const productCards = page.locator('.MuiCard-root'); 
   await expect(productCards.first()).toBeVisible({ timeout: 10000 }); // Espera a que al menos un producto esté visible
 
   await page.fill('input[placeholder="Search..."]', 'Product 1'); // Asegúrate de que el placeholder sea el correcto
   await page.press('input[placeholder="Search..."]', 'Enter');
 
-  await page.waitForTimeout(2000); // Añadir una pausa corta para esperar la actualización
+  await page.waitForTimeout(2000); 
 
   
   const productName = page.locator('.MuiCardContent-root h6').nth(0); // Selecciona el primer <h6> dentro de la tarjeta
